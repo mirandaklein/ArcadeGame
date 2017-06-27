@@ -13,6 +13,9 @@ $ git clone https://github.com/mirandaklein/ArcadeGame.git
 $ cd ArcadeGame
 $ open index.html
 ```
+Or visit the website:
+
+https://mirandaklein.github.io/ArcadeGame/
 
 ## Depenencies:
 No dependencies required. Tested on Chrome.

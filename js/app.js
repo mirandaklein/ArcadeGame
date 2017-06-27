@@ -3,6 +3,8 @@
 // My Player.prototype.update and Player.prototype.handleInput need to be reworked,
 //I put options for reworking into comments
 
+"use strict";
+
 // Enemies our player must avoid
 var Enemy = function (x, y, speed) {
     this.x = x;
@@ -52,59 +54,36 @@ var Player = function (x, y, speed) {
     this.sprite = 'images/char-cat-girl.png'
 };
 
-/*Player.prototype.update = function (key) {
-    //this.x = (dt * this.speed) + this.x
-    //this.y = (dt * this.speed) + this.y
-    if ((key == 'left') && (this.x > 0)) {
-        this.x = this.x - 100;
-    }
-    else if ((key == 'right') && (this.x < 305)) {
-        this.x = this.x + 100;
-    }
-    if ((key == 'up') && (this.y > 0)) {
-        this.y = this.y - 100;
-    }
-    else if ((key == 'down') && (this.y < 376)) {
-        this.y = this.y + 100;
-    }
-};
-
-
-
-//Moves player on screen dependent on arrow keys
-Player.prototype.handleInput = function (key) {
-    this.update(key);
-};
-*/
-
-
 Player.prototype.update = function () {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
-    checkForWin(this);
-   
-};
-
-var checkForWin = function (player) {
     if (player.y === 0) {
         alert("You won!");
         alert("GOOD JOB!");
-        
+
         player.resetPlayer();
-       }
+    }
 };
+
+
+
+/*var checkForWin = function (player) {
+    if (player.y === 0) {
+        alert("You won!");
+        alert("GOOD JOB!");
+
+        player.resetPlayer();
+    }
+};*/
 
 
 Player.prototype.handleInput = function (key) {
     //this.x = (dt * this.speed) + this.x
     //this.y = (dt * this.speed) + this.y
-   
-    
+
+
     if ((key == 'left') && (this.x > 0)) {
         this.x = this.x - 25;
     }
-    else if ((key == 'right') && (this.x < 305)) {
+    else if ((key == 'right') && (this.x < 400)) {
         this.x = this.x + 25;
     }
     if ((key == 'up') && (this.y > 0)) {
@@ -136,7 +115,7 @@ Player.prototype.resetPlayer = function () {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 var allEnemies = [new Enemy(350, 100, 350), new Enemy(0, 200, 80), new Enemy(200, 300, 200), new Enemy(250, 175, 150)];
-var player = new Player(200, 400,20);
+var player = new Player(200, 400, 20);
 
 
 
