@@ -55,11 +55,11 @@ var Player = function (x, y, speed) {
 };
 
 Player.prototype.update = function () {
-    if (player.y === 0) {
+    if (this.y === 0) {
         alert("You won!");
         alert("GOOD JOB!");
 
-        player.resetPlayer();
+        this.resetPlayer();
     }
 };
 
